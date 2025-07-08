@@ -2,4 +2,5 @@
         library.c
         library.h)
 
-target_include_directories(Vexillum PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+# CMAKE_CURRENT_SOURCE_DIR
+#target_include_directories(Vexillum PUBLIC ${PROJECT_BINARY_DIR})
