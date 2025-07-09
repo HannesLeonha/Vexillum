@@ -5,5 +5,8 @@ enable_testing()
 
 set(CMAKE_C_STANDARD 11)
 
+# Config
+set(BUILD_SHARED_LIBS ON)
+
 add_subdirectory(src)
 add_subdirectory(test)

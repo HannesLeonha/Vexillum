@@ -1,15 +1,19 @@
-# Flag Tester
-add_executable(FlagTester
-        main.c)
+set(TEST_FILES
+    main.c
+    Flag.c)
 
-target_link_libraries(FlagTester
-        PRIVATE Vexillum)
-target_include_directories(FlagTester PRIVATE ${PROJECT_SOURCE_DIR}/src)
+foreach(TEST_FILE ${TEST_FILES})
+    # Setup
+    string(REGEX REPLACE "\.[a-zA-Z]*$" "" FILE_NAME ${TEST_FILE})
+    set(TEST_TARGET "${FILE_NAME}_TEST")
 
-set_target_properties(FlagTester
-        PROPERTIES
-        RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/src"
-)
+    # Build
+    add_executable(${TEST_TARGET}
+            ${TEST_FILE})
+    target_link_libraries(${TEST_TARGET}
+            PRIVATE TestVexillum)
+    target_include_directories(${TEST_TARGET} PRIVATE ${PROJECT_SOURCE_DIR}/src)
 
-# Tests
-add_test(NAME Flag COMMAND FlagTester "loose argument" -lhR --long-flag -d "flag argument")
+    # Test
+    add_test(NAME "${FILE_NAME} Test" COMMAND ${TEST_TARGET} "loose argument" -lhR --long-flag -d "flag argument")
+endforeach()

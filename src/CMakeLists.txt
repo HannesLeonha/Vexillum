@@ -1,6 +1,11 @@
-﻿add_library(Vexillum SHARED
-        library.c
-        library.h)
+﻿set(VEXILLUM_SOURCES
+    Vexillum.c
+    Vexillum.h CACHE INTERNAL "")
 
-# CMAKE_CURRENT_SOURCE_DIR
-#target_include_directories(Vexillum PUBLIC ${PROJECT_BINARY_DIR})
+# Library
+add_library(Vexillum
+    ${VEXILLUM_SOURCES})
+
+# Test Library
+add_library(TestVexillum STATIC
+    ${VEXILLUM_SOURCES})
