@@ -1,6 +1,7 @@
 set(TEST_FILES
     main.c
-    Flag.c)
+    ErrorString.c
+)
 
 foreach(TEST_FILE ${TEST_FILES})
     # Setup

@@ -1,6 +1,11 @@
 ﻿set(VEXILLUM_SOURCES
     Vexillum.c
-    Vexillum.h CACHE INTERNAL "")
+    Vexillum.h
+    FlagHandler.c
+    FlagHandler.h
+    ArgumentHandler.c
+    ArgumentHandler.h
+)
 
 # Library
 add_library(Vexillum

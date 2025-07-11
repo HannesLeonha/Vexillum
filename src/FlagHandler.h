@@ -1,0 +1,6 @@
+﻿#ifndef FLAGHANDLER_H
+#define FLAGHANDLER_H
+
+
+
+#endif //FLAGHANDLER_H

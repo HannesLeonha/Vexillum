@@ -7,8 +7,10 @@ int main(int argc, char **argv) {
         return 1;
     }
 
-    printf("Success: %s", argv[1]);
-    hello();
+    printf("Success: %s\n", argv[1]);
+
+    const struct vexillum_error err = {2};
+    printf("Error: %s", get_error_string(err));
 
     return 0;
 }
