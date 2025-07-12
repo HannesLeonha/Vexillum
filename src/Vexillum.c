@@ -2,15 +2,7 @@
 
 #include <stdbool.h>
 
-void enable_usage_message_on_parse_error(char* program_name, char* program_description) {
-
-}
-
-void enable_error_code_on_parse_error() {
-
-}
-
-
+// Flag registering
 struct vexillum_error register_flag(char short_format, char* long_format, char* flag_description, bool has_argument) {
   return;
 }
@@ -51,10 +43,23 @@ const char* VEXILLUM_ERROR_NAMES[] = {
   "Flag got eaten"
 };
 
+void enable_usage_message_on_parse_error(char* program_name, char* program_description) {
+
+}
+
+void enable_error_code_on_parse_error() {
+
+}
+
 const char* get_error_string(const struct vexillum_error error) {
   if(error.code >= sizeof(VEXILLUM_ERROR_NAMES)/sizeof(VEXILLUM_ERROR_NAMES[0])) {
     return "Unknown Error";
   }
 
   return VEXILLUM_ERROR_NAMES[error.code];
+}
+
+// Uninitialize library
+void free_vexillum() {
+
 }

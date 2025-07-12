@@ -5,6 +5,8 @@
     FlagHandler.h
     ArgumentHandler.c
     ArgumentHandler.h
+    StringLinkedList.c
+    StringLinkedList.h
 )
 
 # Library
