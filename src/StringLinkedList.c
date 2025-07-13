@@ -15,11 +15,12 @@ struct string_list* create_string_list_element(char* string) {
 }
 
 int string_list_length(const struct string_list* list) {
-    int length = 0;
+    int length = 1;
 
-    do {
+    while(list->next != NULL) {
+        list = list->next;
         length++;
-    } while((list = list->next) != NULL);
+    }
 
     return length;
 }
@@ -27,38 +28,42 @@ int string_list_length(const struct string_list* list) {
 char* get_string_list_element(const struct string_list* list, const int index) {
     int i = 0;
 
-    while((list = list->next) != NULL) {
+    do {
         if(i == index) {
             return list->string;
         }
 
         i++;
-    }
+    } while((list = list->next) != NULL);
 
     return NULL;
 }
 
-void delete_string_list_element(struct string_list** list, const int index) {
+void delete_string_list_element(struct string_list** listPointer, const int index) {
     if(index == 0) {
-        struct string_list* start = *list;
-        *list = (*list)->next;
+        struct string_list* start = *listPointer;
+        *listPointer = (*listPointer)->next;
         free(start);
     } else {
         int i = 0;
+        struct string_list* lastElement = NULL;
+        struct string_list* element = *listPointer;
 
-        while((*list = (*list)->next) != NULL) {
+        do {
             if(i == index) {
-                free(*list);
+                lastElement->next = element->next;
+                free(element);
+                break;
             }
 
             i++;
-        }
+            lastElement = element;
+        } while((element = element->next) != NULL);
     }
-
 }
 
 void append_string_list_element(struct string_list* list, struct string_list* element) {
-    while((list = list->next) != NULL) {}
+    while(list->next != NULL) { list = list->next; }
 
     list->next = element;
 }
