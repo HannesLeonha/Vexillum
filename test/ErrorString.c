@@ -17,7 +17,7 @@ int main() {
     }
     printf("PASSED: Error string on boundary is unknown\n");
 
-    err.code = 255;
+    err.code = (char) 255;
     if(strcmp(get_error_string(err), "Unknown Error") != 0) {
         fprintf(stderr, "FAILED: Error string outside of bounds is unexpected\n");
         return 1;

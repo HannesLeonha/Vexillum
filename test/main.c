@@ -10,6 +10,6 @@ int main(int argc, char **argv) {
 //    printf("Success: %s\n", argv[1]);
 
     clear_flags();
-
+    struct vexillum_error s = {0};
     return 0;
 }

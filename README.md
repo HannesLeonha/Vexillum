@@ -1,6 +1,6 @@
 ﻿# Vexillum
 <img src="https://hackatime-badge.hackclub.com/U092HP2LVNU/Vexillum"><br>
-This c library takes the arguments which the program received and parses them into an nicely accessible form.
+This c library takes the arguments which the program received and parses them into a nicely accessible form.
 
 ## Name
 If you are wondering where I got the name from. I remembered that the study of flags is called Vexillology. That name comes from the latin word for flag which is vexillum.
@@ -13,7 +13,7 @@ A loose argument is a piece of text that can be anywhere in the program argument
  - `program.exe path/to/some/file "Argument with spaces" -l "Argument between flags" -s`
 
 ### Flags
-It starts with a dash and has two variants. Short flags which are just one letter (case sensitive). They can also be combined by using one dash and putting multiple letters after it. The other variant is a long flag which starts with two dashes and the it uses lowercase words seperated by dashes.
+It starts with a dash and has two variants. Short flags which are just one letter (case-sensitive). They can also be combined by using one dash and putting multiple letters after it. The other variant is a long flag which starts with two dashes and only contains lowercase words seperated by dashes.
  - Short flags: `program.exe -l -s -R`
  - Combined flags: `program.exe -lsR`
  - Long flags: `program.exe -rf --no-preserve-root`

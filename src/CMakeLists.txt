@@ -7,6 +7,8 @@
     ArgumentHandler.h
     StringLinkedList.c
     StringLinkedList.h
+    ErrorHandler.c
+    ErrorHandler.h
 )
 
 # Library
