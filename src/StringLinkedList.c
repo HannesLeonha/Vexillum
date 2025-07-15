@@ -3,7 +3,7 @@
 #include <stddef.h>
 #include <stdlib.h>
 
-struct string_list* create_string_list_element(char* string) {
+struct string_list* sll_create_string_list_element(const char* string) {
     struct string_list* list = malloc(sizeof(struct string_list));
 
     if(list != NULL) {
@@ -14,7 +14,7 @@ struct string_list* create_string_list_element(char* string) {
     return list;
 }
 
-int string_list_length(const struct string_list* list) {
+int sll_string_list_length(const struct string_list* list) {
     int length = 1;
 
     while(list->next != NULL) {
@@ -25,7 +25,7 @@ int string_list_length(const struct string_list* list) {
     return length;
 }
 
-char* get_string_list_element(const struct string_list* list, const int index) {
+char* sll_get_string_list_element(const struct string_list* list, const int index) {
     int i = 0;
 
     do {
@@ -39,7 +39,7 @@ char* get_string_list_element(const struct string_list* list, const int index) {
     return NULL;
 }
 
-void delete_string_list_element(struct string_list** listPointer, const int index) {
+void sll_delete_string_list_element(struct string_list** listPointer, const int index) {
     if(index == 0) {
         struct string_list* start = *listPointer;
         *listPointer = (*listPointer)->next;
@@ -62,13 +62,13 @@ void delete_string_list_element(struct string_list** listPointer, const int inde
     }
 }
 
-void append_string_list_element(struct string_list* list, struct string_list* element) {
+void sll_append_string_list_element(struct string_list* list, struct string_list* element) {
     while(list->next != NULL) { list = list->next; }
 
     list->next = element;
 }
 
-void prepend_string_list_element(struct string_list** list, struct string_list* element) {
+void sll_prepend_string_list_element(struct string_list** list, struct string_list* element) {
     struct string_list* start = *list;
 
     *list = element;
@@ -76,9 +76,9 @@ void prepend_string_list_element(struct string_list** list, struct string_list* 
     (*list)->next = start;
 }
 
-void free_string_list(struct string_list* list) {
+void sll_free_string_list(struct string_list* list) {
     if(list->next != NULL) {
-        free_string_list(list->next);
+        sll_free_string_list(list->next);
     }
 
     free(list);

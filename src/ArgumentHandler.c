@@ -7,32 +7,32 @@
 
 struct string_list* argument_list = NULL;
 
-struct vexillum_error add_argument(const char* argument) {
-    struct string_list* new_element = create_string_list_element(argument);
+struct vexillum_error ah_add_argument(const char* argument) {
+    struct string_list* new_element = sll_create_string_list_element(argument);
 
     if(new_element == NULL) {
-        return create_error(VEXILLUM_ERROR_FLAG_NOT_FOUND, false);
+        return eh_create_error(VEXILLUM_ERROR_FLAG_NOT_FOUND, false);
     }
 
     if(argument_list == NULL) {
         argument_list = new_element;
     } else {
-        append_string_list_element(argument_list, new_element);
+        sll_append_string_list_element(argument_list, new_element);
     }
 
-    return create_error(VEXILLUM_NO_ERROR, false);
+    return eh_create_error(VEXILLUM_NO_ERROR, false);
 }
 
-int argument_length() {
-    return string_list_length(argument_list);
+int ah_argument_length() {
+    return sll_string_list_length(argument_list);
 }
 
-char* get_argument_from_list(const int index) {
-    return get_string_list_element(argument_list, index);
+char* ah_get_argument(const int index) {
+    return sll_get_string_list_element(argument_list, index);
 }
 
-void free_arguments() {
-    free_string_list(argument_list);
+void ah_free_arguments() {
+    sll_free_string_list(argument_list);
     argument_list = NULL;
 }
 

@@ -18,7 +18,7 @@ const char* get_argument(int argument_number);
 bool is_flag_set(char flag_short_format);
 const char* get_flag_argument(char flag_short_format);
 
-void print_usage_message_on_parse_error(char* program_description);
+void print_usage_message_on_parse_error(bool enabled, char* program_description);
 const char* get_error_string(struct vexillum_error error);
 
 void free_vexillum();

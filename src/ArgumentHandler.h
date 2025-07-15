@@ -1,9 +1,9 @@
 ﻿#ifndef ARGUMENTHANDLER_H
 #define ARGUMENTHANDLER_H
 
-struct vexillum_error add_argument(const char* argument);
-int argument_length();
-char* get_argument_from_list(int index);
-void free_arguments();
+struct vexillum_error ah_add_argument(const char* argument);
+int ah_argument_length();
+char* ah_get_argument(int index);
+void ah_free_arguments();
 
 #endif //ARGUMENTHANDLER_H
