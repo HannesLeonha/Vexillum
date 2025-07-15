@@ -5,10 +5,11 @@
     FlagHandler.h
     ArgumentHandler.c
     ArgumentHandler.h
-    LinkedList.c
-    LinkedList.h
-    ErrorHandler.c
-    ErrorHandler.h
+    util/LinkedList.c
+    util/LinkedList.h
+    error/ErrorHandler.c
+    error/ErrorHandler.h
+    error/ErrorDefinitions.h
 )
 
 # Library
