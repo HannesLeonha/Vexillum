@@ -10,7 +10,7 @@ int main() {
     }
     printf("PASSED: First error string\n");
 
-    error.code = (char) 3;
+    error.code = (char) 2;
     if(strcmp(get_error_string(error), "Unknown Error") != 0) {
         fprintf(stderr, "FAILED: Error string on boundary is unexpected (got: %s)\n", get_error_string(error));
         return 1;

@@ -3,9 +3,7 @@
 
 #include <stdbool.h>
 
-struct vexillum_error {
-    char code;
-};
+#include "error/ErrorDefinitions.h"
 
 struct vexillum_error register_flag(char short_format, char* long_format, char* flag_description, bool has_argument);
 struct vexillum_error unregister_flag(char short_format);

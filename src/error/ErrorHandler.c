@@ -1,20 +1,14 @@
-﻿#include "ErrorHandler.h"
+﻿#include "../ErrorHandler.h"
 
 #include <stddef.h>
 #include <stdio.h>
-
-const char* VEXILLUM_ERROR_NAMES[] = {
-    "No error",
-    "Flag not found",
-    "Flag got eaten"
-};
 
 bool print_usage_enabled = false;
 char* program_name = NULL;
 char* program_description = NULL;
 
-void print_program_usage();
-void print_error(struct vexillum_error error, bool print_usage);
+void print_usage();
+void print_error(struct vexillum_error error);
 
 void eh_set_program_name(char* name) {
     program_name = name;
@@ -25,25 +19,34 @@ void eh_enable_usage_message(const bool enabled, char* description) {
     program_description = description;
 }
 
-void print_error(const struct vexillum_error error, const bool print_usage) {
+void print_error(const struct vexillum_error error) {
     // TODO: support printing detailed error (like: option e is not recognised)
     printf("%s\n", eh_get_error_string(error));
-
-    if(print_usage) {
-        print_program_usage();
-    }
 }
 
-void print_program_usage() {
+void print_usage() {
     // TODO: get the flags n stuff
-    printf("\nUsage: %s\n\n%s", program_name, program_description);
+    printf("Usage: %s\n\n%s\n", program_name, program_description);
 }
 
-struct vexillum_error eh_create_error(const char error_code, const bool print_usage) {
+struct vexillum_error eh_create_error(const char error_code) {
     const struct vexillum_error error = {error_code};
 
-    if(print_usage_enabled && error_code != (char) 0) {
-        print_error(error, print_usage);
+    if(print_usage_enabled) {
+        const bool should_print_error = PRINT_ERROR_AND_PRINT_USAGE_MATRIX[(int)error_code*2];
+        const bool should_print_usage = PRINT_ERROR_AND_PRINT_USAGE_MATRIX[(int)error_code*2+1];
+
+        if(should_print_error) {
+            print_error(error);
+        }
+
+        if(should_print_error && should_print_usage) {
+            printf("\n");
+        }
+
+        if(should_print_usage) {
+            print_usage();
+        }
     }
 
     return error;
