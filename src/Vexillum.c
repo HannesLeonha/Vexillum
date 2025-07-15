@@ -5,7 +5,7 @@
 
 #include "ArgumentHandler.h"
 #include "ErrorHandler.h"
-#include "StringLinkedList.h"
+#include "LinkedList.h"
 
 // Flag registering
 struct vexillum_error register_flag(char short_format, char* long_format, char* flag_description, bool has_argument) {

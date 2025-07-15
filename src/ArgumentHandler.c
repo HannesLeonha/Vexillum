@@ -3,7 +3,7 @@
 #include <stddef.h>
 
 #include "ErrorHandler.h"
-#include "StringLinkedList.h"
+#include "LinkedList.h"
 
 struct string_list* argument_list = NULL;
 

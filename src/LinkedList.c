@@ -1,13 +1,13 @@
-﻿#include "StringLinkedList.h"
+﻿#include "LinkedList.h"
 
 #include <stddef.h>
 #include <stdlib.h>
 
-struct string_list* sll_create_string_list_element(const char* string) {
+struct string_list* sll_create_string_list_element(const void* element) {
     struct string_list* list = malloc(sizeof(struct string_list));
 
     if(list != NULL) {
-        list->string = string;
+        list->string = element;
         list->next = NULL;
     }
 
@@ -25,7 +25,7 @@ int sll_string_list_length(const struct string_list* list) {
     return length;
 }
 
-char* sll_get_string_list_element(const struct string_list* list, const int index) {
+void* sll_get_string_list_element(const struct string_list* list, const int index) {
     int i = 0;
 
     do {

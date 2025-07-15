@@ -5,8 +5,8 @@
     FlagHandler.h
     ArgumentHandler.c
     ArgumentHandler.h
-    StringLinkedList.c
-    StringLinkedList.h
+    LinkedList.c
+    LinkedList.h
     ErrorHandler.c
     ErrorHandler.h
 )
