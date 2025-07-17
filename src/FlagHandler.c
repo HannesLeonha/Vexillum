@@ -4,7 +4,8 @@
 #include "error/ErrorHandler.h"
 #include "util/LinkedList.h"
 
-struct linked_list* arguments = NULL;
+struct linked_list* is_flag_set = NULL;
+struct linked_list* flag_argument = NULL;
 
 bool compare_short_flags(void* a, void* b) {
     return *(char*) a == *(char*) b;
@@ -15,6 +16,8 @@ struct vexillum_error fh_register_flag(const char short_format, const char* long
     struct linked_list* long_element = ll_create_list_element(long_format);
     struct linked_list* description_element = ll_create_list_element(flag_description);
     struct linked_list* has_argument_element = ll_create_list_element(&has_argument);
+    struct linked_list* is_flag_set_element = ll_create_list_element(NULL);
+    struct linked_list* flag_argument_element = ll_create_list_element(NULL);
 
     if(short_element == NULL || long_element == NULL || description_element == NULL || has_argument_element == NULL) {
         return eh_create_error(VEXILLUM_ERROR_NOT_ENOUGH_MEMORY);
@@ -25,11 +28,15 @@ struct vexillum_error fh_register_flag(const char short_format, const char* long
         ll_append_list_element(fh_long_flags, long_element);
         ll_append_list_element(fh_flag_descriptions, description_element);
         ll_append_list_element(fh_flag_has_argument, has_argument_element);
+        ll_append_list_element(is_flag_set, is_flag_set_element);
+        ll_append_list_element(flag_argument, flag_argument_element);
     } else {
         fh_short_flags = short_element;
         fh_long_flags = long_element;
         fh_flag_descriptions = description_element;
         fh_flag_has_argument = has_argument_element;
+        is_flag_set = is_flag_set_element;
+        flag_argument = flag_argument_element;
     }
 
     return eh_create_error(VEXILLUM_NO_ERROR);
@@ -46,20 +53,36 @@ struct vexillum_error fh_unregister_flag(const char short_format) {
     ll_delete_list_element(&fh_long_flags, index);
     ll_delete_list_element(&fh_flag_descriptions, index);
     ll_delete_list_element(&fh_flag_has_argument, index);
+    ll_delete_list_element(&is_flag_set, index);
+    ll_delete_list_element(&flag_argument, index);
 
     return eh_create_error(VEXILLUM_NO_ERROR);
 }
 
-bool fh_parse_argument(char* argument) {
+bool fh_parse_argument(const char* argument) {
 
+
+    return argument[0] == '-';
 }
 
-bool fh_is_flag_set(char flag_short_format) {
-    return false;
+bool fh_is_flag_set(const char flag_short_format) {
+    const int index = ll_get_element_index(fh_short_flags, (const void*) flag_short_format, compare_short_flags);
+
+    if(index == -1) {
+        return false;
+    }
+
+    return (bool) ll_get_list_element(is_flag_set, index);
 }
 
 const char* fh_get_flag_argument(char flag_short_format) {
-    return "ah";
+    const int index = ll_get_element_index(fh_short_flags, (const void*) flag_short_format, compare_short_flags);
+
+    if(index == -1) {
+        return NULL;
+    }
+
+    return (char*) ll_get_list_element(flag_argument, index);
 }
 
 void free_flags() {
