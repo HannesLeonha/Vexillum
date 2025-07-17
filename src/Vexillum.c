@@ -1,12 +1,10 @@
 ﻿#include "Vexillum.h"
 
 #include <stdbool.h>
-#include <stdio.h>
 
 #include "ArgumentHandler.h"
 #include "error/ErrorHandler.h"
 #include "FlagHandler.h"
-#include "util/LinkedList.h"
 
 // Flag registering
 struct vexillum_error register_flag(const char short_format, char* long_format, char* flag_description, const bool has_argument) {

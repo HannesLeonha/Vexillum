@@ -1,7 +1,11 @@
-﻿#include "../ErrorHandler.h"
+﻿#include "ErrorHandler.h"
 
 #include <stddef.h>
 #include <stdio.h>
+#include <stdlib.h>
+
+#include "../FlagHandler.h"
+#include "../util/LinkedList.h"
 
 bool print_usage_enabled = false;
 char* program_name = NULL;
@@ -25,8 +29,25 @@ void print_error(const struct vexillum_error error) {
 }
 
 void print_usage() {
-    // TODO: get the flags n stuff
-    printf("Usage: %s\n\n%s\n", program_name, program_description);
+    const int amount_of_flags = ll_list_length(fh_short_flags);
+
+    char* flagString = malloc(sizeof(char) * (amount_of_flags + 1));
+    flagString[amount_of_flags] = '\0';
+
+    for(int i = 0; i < amount_of_flags; i++) {
+        flagString[i] = *(char*) ll_get_list_element(fh_short_flags, i);
+    }
+
+    printf("Usage: %s %s [ARGUMENTS]...\n%s\n", program_name, flagString, program_description);
+
+    for(int i = 0; i < amount_of_flags; i++) {
+        char* long_flags = ll_get_list_element(fh_long_flags, i);
+        char* description = ll_get_list_element(fh_flag_descriptions, i);
+
+        printf(" -%c%c %-20s %s", flagString[i], long_flags != NULL ? ',' : ' ', long_flags != NULL ? long_flags : "", description != NULL ? description : "");
+    }
+
+    free(flagString);
 }
 
 struct vexillum_error eh_create_error(const char error_code) {

@@ -3,7 +3,7 @@
 
 #include <stdbool.h>
 
-#include "../ErrorDefinitions.h"
+#include "ErrorDefinitions.h"
 
 void eh_set_program_name(char* name);
 void eh_enable_usage_message(bool enabled, char* description);
