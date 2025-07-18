@@ -36,4 +36,3 @@ void ah_free_arguments() {
     ll_free_list(argument_list);
     argument_list = NULL;
 }
-

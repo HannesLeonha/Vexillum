@@ -13,6 +13,7 @@ int ll_get_element_index(const struct linked_list* list, const void* element, _B
 void ll_delete_list_element(struct linked_list** listPointer, int index);
 void ll_append_list_element(struct linked_list* list, struct linked_list* element);
 void ll_prepend_list_element(struct linked_list** list, struct linked_list* element);
+void ll_set_list_element(struct linked_list* list, int index, void* element);
 void ll_free_list(struct linked_list* list);
 
 #endif //LINKEDLIST_H

@@ -90,7 +90,22 @@ void ll_prepend_list_element(struct linked_list** list, struct linked_list* elem
     (*list)->next = start;
 }
 
+void ll_set_list_element(struct linked_list* list, const int index, void* element) {
+    int i = 0;
+
+    do {
+        if(i == index) {
+            list->element = element;
+            break;
+        }
+
+        i++;
+    } while((list = list->next) != NULL);
+}
+
 void ll_free_list(struct linked_list* list) {
+    if(list == NULL) return;
+
     if(list->next != NULL) {
         ll_free_list(list->next);
     }

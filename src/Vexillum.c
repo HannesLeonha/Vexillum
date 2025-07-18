@@ -22,14 +22,24 @@ void clear_flags() {
 // Parse
 struct vexillum_error parse_arguments(const int argc, char **argv) {
     ah_free_arguments();
+    fh_free_set_flags();
     if(argc >= 1) eh_set_program_name(argv[0]);
 
-    for(int i = 0; i < argc; i++) {
-        if(fh_parse_argument(argv[i])) {
+    struct vexillum_error error = eh_create_error(VEXILLUM_NO_ERROR);
 
+    for(int i = 1; i < argc; i++) {
+        if(argv[i][0] != '-') {
+            error = ah_add_argument(argv[i]);
+        } else {
+            error = fh_parse_argument(argv[i]);
         }
-        // add_argument();
+
+        if(error.code != VEXILLUM_NO_ERROR) {
+            return error;
+        }
     }
+
+    return error;
 }
 
 // Argument and flag querying

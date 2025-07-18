@@ -25,7 +25,7 @@ void eh_enable_usage_message(const bool enabled, char* description) {
 
 void print_error(const struct vexillum_error error) {
     // TODO: support printing detailed error (like: option e is not recognised)
-    printf("%s\n", eh_get_error_string(error));
+    fprintf(stderr, "ERROR: %s\n", eh_get_error_string(error));
 }
 
 void print_usage() {
@@ -38,13 +38,14 @@ void print_usage() {
         flagString[i] = *(char*) ll_get_list_element(fh_short_flags, i);
     }
 
-    printf("Usage: %s %s [ARGUMENTS]...\n%s\n", program_name, flagString, program_description);
+    // TODO: only print program.exe part of program name
+    printf("Usage: %s -%s [ARGUMENTS]...\n%s\n", program_name, flagString, program_description);
 
     for(int i = 0; i < amount_of_flags; i++) {
         char* long_flags = ll_get_list_element(fh_long_flags, i);
         char* description = ll_get_list_element(fh_flag_descriptions, i);
 
-        printf(" -%c%c %-20s %s", flagString[i], long_flags != NULL ? ',' : ' ', long_flags != NULL ? long_flags : "", description != NULL ? description : "");
+        printf(" -%c%c %-20s %s\n", flagString[i], long_flags != NULL ? ',' : ' ', long_flags != NULL ? long_flags : "", description != NULL ? description : "");
     }
 
     free(flagString);
@@ -74,7 +75,7 @@ struct vexillum_error eh_create_error(const char error_code) {
 }
 
 const char* eh_get_error_string(const struct vexillum_error error) {
-    if(error.code >= sizeof(VEXILLUM_ERROR_NAMES)/sizeof(VEXILLUM_ERROR_NAMES[0])) {
+    if(error.code >= AMOUNT_OF_ERRORS || error.code < 0) {
         return "Unknown Error";
     }
 

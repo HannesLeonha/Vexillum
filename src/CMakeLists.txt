@@ -10,6 +10,7 @@
     error/ErrorHandler.c
     error/ErrorHandler.h
     error/ErrorDefinitions.h
+    error/ErrorDefinitions.c
 )
 
 # Library
