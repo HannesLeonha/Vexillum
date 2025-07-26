@@ -1,6 +1,9 @@
-﻿# Vexillum
+<img src="https://raw.githubusercontent.com/HannesLeonha/Vexillum/refs/heads/master/docs/assets/images/hero.svg">
 <img src="https://hackatime-badge.hackclub.com/U092HP2LVNU/Vexillum"><br>
 This c library takes the arguments which the program received and parses them into a nicely accessible form.
+
+## Demo
+Here is a small demonstration of how the library works: <a href="https://hannesleonha.github.io/Vexillum/">https://hannesleonha.github.io/Vexillum/</a>.
 
 ## Name
 If you are wondering where I got the name from. I remembered that the study of flags is called Vexillology. That name comes from the latin word for flag which is vexillum.
