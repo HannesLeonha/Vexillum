@@ -48,6 +48,8 @@ void print_usage() {
         printf(" -%c%c %-20s %s\n", flagString[i], long_flags != NULL ? ',' : ' ', long_flags != NULL ? long_flags : "", description != NULL ? description : "");
     }
 
+    printf("\n");
+
     free(flagString);
 }
 

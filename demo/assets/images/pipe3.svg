@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Ebene_3" data-name="Ebene 3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 243.21 224.5">
+  <defs>
+    <style>
+      .cls-1 {
+        stroke-width: 35px;
+      }
+
+      .cls-1, .cls-2 {
+        stroke: #171717;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5 {
+        fill: none;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-2 {
+        stroke-width: 26px;
+      }
+
+      .cls-3 {
+        stroke: url(#Unbenannter_Verlauf_185-2);
+        stroke-width: 31px;
+      }
+
+      .cls-4 {
+        stroke: url(#Unbenannter_Verlauf_185-3);
+        stroke-width: 18px;
+      }
+
+      .cls-5 {
+        stroke: url(#Unbenannter_Verlauf_185);
+        stroke-width: 37px;
+      }
+    </style>
+    <linearGradient id="Unbenannter_Verlauf_185" data-name="Unbenannter Verlauf 185" x1="291.02" y1="-10.12" x2=".95" y2="279.94" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#c700d4"/>
+      <stop offset=".13" stop-color="#c000d4"/>
+      <stop offset=".31" stop-color="#ae00d4"/>
+      <stop offset=".52" stop-color="#9000d4"/>
+      <stop offset=".76" stop-color="#6600d4"/>
+      <stop offset="1" stop-color="#3300d4"/>
+    </linearGradient>
+    <linearGradient id="Unbenannter_Verlauf_185-2" data-name="Unbenannter Verlauf 185" x1="289.83" y1="-8.31" x2="2.76" y2="278.75" xlink:href="#Unbenannter_Verlauf_185"/>
+    <linearGradient id="Unbenannter_Verlauf_185-3" data-name="Unbenannter Verlauf 185" x1="287.25" y1="-4.39" x2="6.68" y2="276.17" xlink:href="#Unbenannter_Verlauf_185"/>
+  </defs>
+  <path class="cls-5" d="M315.44,32.8h-104.92c-25.35,0-45.9,20.55-45.9,45.9v35.41c0,25.35-20.55,45.9-45.9,45.9l-39.51,1c-25.35,0-45.9,20.55-45.9,45.9v86.89"/>
+  <path class="cls-1" d="M315.44,32.8h-104.92c-25.35,0-45.9,20.55-45.9,45.9v35.41c0,25.35-20.55,45.9-45.9,45.9l-39.51,1c-25.35,0-45.9,20.55-45.9,45.9v86.89"/>
+  <path class="cls-3" d="M315.44,32.8h-104.92c-25.35,0-45.9,20.55-45.9,45.9v35.41c0,25.35-20.55,45.9-45.9,45.9l-39.51,1c-25.35,0-45.9,20.55-45.9,45.9v86.89"/>
+  <path class="cls-2" d="M315.44,32.8h-104.92c-25.35,0-45.9,20.55-45.9,45.9v35.41c0,25.35-20.55,45.9-45.9,45.9l-39.51,1c-25.35,0-45.9,20.55-45.9,45.9v86.89"/>
+  <path class="cls-4" d="M315.44,32.8h-104.92c-25.35,0-45.9,20.55-45.9,45.9v35.41c0,25.35-20.55,45.9-45.9,45.9l-39.51,1c-25.35,0-45.9,20.55-45.9,45.9v86.89"/>
+</svg>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Ebene_2" data-name="Ebene 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 238.68 181.42">
+  <defs>
+    <style>
+      .cls-1 {
+        stroke-width: 35px;
+      }
+
+      .cls-1, .cls-2 {
+        stroke: #171717;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5 {
+        fill: none;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-2 {
+        stroke-width: 26px;
+      }
+
+      .cls-3 {
+        stroke: url(#Unbenannter_Verlauf_185-2);
+        stroke-width: 31px;
+      }
+
+      .cls-4 {
+        stroke: url(#Unbenannter_Verlauf_185-3);
+        stroke-width: 18px;
+      }
+
+      .cls-5 {
+        stroke: url(#Unbenannter_Verlauf_185);
+        stroke-width: 37px;
+      }
+    </style>
+    <linearGradient id="Unbenannter_Verlauf_185" data-name="Unbenannter Verlauf 185" x1="-9.68" y1="7.01" x2="243.5" y2="153.19" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#c700d4"/>
+      <stop offset=".13" stop-color="#c000d4"/>
+      <stop offset=".31" stop-color="#ae00d4"/>
+      <stop offset=".52" stop-color="#9000d4"/>
+      <stop offset=".76" stop-color="#6600d4"/>
+      <stop offset="1" stop-color="#3300d4"/>
+    </linearGradient>
+    <linearGradient id="Unbenannter_Verlauf_185-2" data-name="Unbenannter Verlauf 185" x1="-8.76" y1="8.41" x2="240.87" y2="152.54" xlink:href="#Unbenannter_Verlauf_185"/>
+    <linearGradient id="Unbenannter_Verlauf_185-3" data-name="Unbenannter Verlauf 185" x1="-6.75" y1="11.45" x2="235.18" y2="151.13" xlink:href="#Unbenannter_Verlauf_185"/>
+  </defs>
+  <path class="cls-5" d="M198.85,198.47v-104.92c0-25.35-20.55-45.9-45.9-45.9H-22.46"/>
+  <path class="cls-1" d="M198.85,198.47v-104.92c0-25.35-20.55-45.9-45.9-45.9H-22.46"/>
+  <path class="cls-3" d="M198.85,198.47v-104.92c0-25.35-20.55-45.9-45.9-45.9H-22.46"/>
+  <path class="cls-2" d="M198.85,198.47v-104.92c0-25.35-20.55-45.9-45.9-45.9H-22.46"/>
+  <path class="cls-4" d="M198.85,198.47v-104.92c0-25.35-20.55-45.9-45.9-45.9H-22.46"/>
+</svg>

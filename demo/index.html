@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Basic Page Needs
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta charset="utf-8">
+    <title>Vexillum Demo</title>
+    <meta name="description" content="This is a demo for my argument parser written in c">
+    <meta name="author" content="Hannes Leonhartsberger">
+
+    <!-- Mobile Specific Metas
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/skeleton.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <!-- Favicon
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="icon" type="image/svg" href="assets/favicon.svg">
+
+    <!-- Scripts
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <script defer src="main.js"></script>
+  </head>
+  <body>
+    <img src="assets/images/pipe2.svg" alt="Decorative pipe with gradient" class="pipe" style="top: 0; left: 0; width: 15rem;">
+    <img src="assets/images/pipe1.svg" alt="Decorative pipe with gradient" class="pipe" style="bottom: 0; left: 0; width: 15rem;">
+    <img src="assets/images/pipe3.svg" alt="Decorative pipe with gradient" class="pipe" style="bottom: 0; right: 0; width: 15rem;">
+    <section>
+      <div class="container">
+        <div class="row">
+          <img class="twelve columns" src="assets/images/hero.svg" alt="Text that says vexillum and two flags on the left and right of it.">
+          <div class="twelve columns">
+            <p>This project is a library written for C that parses the arguments given to the program when executing it from the command-line into a nicely accessible form.
+              It supports flags (also called options) in the style of linux commands (like: ls -la).
+              You can find the GitHub Repository here: <a href="https://github.com/HannesLeonha/Vexillum" target="_blank">https://github.com/HannesLeonha/Vexillum</a>.
+              If you are wondering about the name, it is actually latin and stands for flag.</p>
+          </div>
+        </div>
+        <div class="row" style="margin-top: 3rem;">
+          <div class="twelve columns">
+            <h4 style="margin-bottom: 0.5rem;">Test arguments and flags here</h4>
+            <input type="text" value="program.exe" disabled style="width: 11.2rem; border-bottom-right-radius: 0; border-top-right-radius: 0; font-family: 'Consolas', monospace;">
+            <input id="argumentInput" type="text" placeholder="-rf / --no-preserve-root" style="float: right; width: calc(100% - 11.2rem); border-bottom-left-radius: 0; border-top-left-radius: 0; font-family: 'Consolas', monospace;">
+          </div>
+        </div>
+        <div class="row" style="margin-top: 2rem;">
+          <div class="one-half column">
+            <h4 style="margin-bottom: 0.5rem;">Add flags here</h4>
+            <table id="flagInput" style="width: 100%; font-family: 'Consolas', monospace;">
+              <tr style="font-family: 'Raleway', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;">
+                <th>Short name</th>
+                <th>Long name</th>
+                <th>Has argument</th>
+                <th>Delete</th>
+              </tr>
+            </table>
+            <button id="addFlag" class="button-primary">Add flag</button>
+          </div>
+          <div class="one-half column">
+            <h4 style="margin-bottom: 0.5rem;">See output here</h4>
+            <table id="flagOutput" style="width: 100%; font-family: 'Consolas', monospace;">
+              <tr style="font-family: 'Raleway', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;">
+                <th>Flag name</th>
+                <th>Flag set</th>
+                <th>Flag argument</th>
+              </tr>
+            </table>
+            <table id="argumentOutput" style="width: 100%; font-family: 'Consolas', monospace;">
+              <tr style="font-family: 'Raleway', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;">
+                <th>Arguments</th>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
