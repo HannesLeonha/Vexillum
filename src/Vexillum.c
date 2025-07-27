@@ -1,6 +1,7 @@
 ﻿#include "Vexillum.h"
 
 #include <stdbool.h>
+#include <stddef.h>
 
 #include "ArgumentHandler.h"
 #include "error/ErrorHandler.h"
@@ -22,22 +23,27 @@ void clear_flags() {
 // Parse
 struct vexillum_error parse_arguments(const int argc, char **argv) {
     ah_free_arguments();
-    fh_free_set_flags();
+    fh_reset_set_flags();
     if(argc >= 1) eh_set_program_name(argv[0]);
 
+    char* argument_belongs_to_flag = NULL;
     struct vexillum_error error = eh_create_error(VEXILLUM_NO_ERROR);
 
-    for(int i = 1; i < argc; i++) {
-        if(argv[i][0] != '-') {
-            error = ah_add_argument(argv[i]);
-        } else {
-            error = fh_parse_argument(argv[i]);
-        }
+    eh_start_error_stacking();
 
-        if(error.code != VEXILLUM_NO_ERROR) {
-            return error;
+    for(int i = 1; i < argc; i++) {
+        if(argv[i][0] == '-' || argument_belongs_to_flag != NULL) {
+            error = fh_parse_argument(argv[i], &argument_belongs_to_flag);
+        } else {
+            error = ah_add_argument(argv[i]);
         }
     }
+
+    if(argument_belongs_to_flag != NULL) {
+        error = eh_create_error(VEXILLUM_ERROR_NO_ARGUMENT_ASSOCIATED_WITH_FLAG);
+    }
+
+    eh_stop_error_stacking();
 
     return error;
 }
@@ -60,8 +66,13 @@ const char* get_flag_argument(const char flag_short_format) {
 }
 
 // Error Handling
-void print_usage_message_on_parse_error(const bool enabled, char* program_description) {
-    eh_enable_usage_message(enabled, program_description);
+void print_usage(char* program_name) {
+    eh_set_program_name(program_name);
+    eh_print_usage();
+}
+
+void print_usage_message_on_parse_error(const bool enabled, char* program_description, char* argument_text) {
+    eh_enable_usage_message(enabled, program_description, argument_text);
 }
 
 const char* get_error_string(const struct vexillum_error error) {

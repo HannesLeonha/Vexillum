@@ -17,6 +17,9 @@
 add_library(Vexillum
     ${VEXILLUM_SOURCES})
 
+# Copy the header into the output
+configure_file(${CMAKE_CURRENT_SOURCE_DIR}/Vexillum.h ${CMAKE_CURRENT_BINARY_DIR}/Vexillum.h COPYONLY)
+
 # Test Library
 add_library(TestVexillum STATIC
     ${VEXILLUM_SOURCES})

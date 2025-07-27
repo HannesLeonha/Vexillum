@@ -10,7 +10,6 @@ let registeredFlags = [];
 let outputArguments = [];
 
 // ------------------ Flag input ------------------
-// todo: bring flags into correct format, show visual indicator if something is not correct (and exclude it from registeredFlags)
 function updateRegisteredFlag(inputElement, key) {
   let success = false;
 

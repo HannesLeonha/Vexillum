@@ -1,5 +1,5 @@
-<img src="https://raw.githubusercontent.com/HannesLeonha/Vexillum/refs/heads/master/docs/assets/images/hero.svg">
-<img src="https://hackatime-badge.hackclub.com/U092HP2LVNU/Vexillum"><br>
+<img alt="Text that says Vexillum and flags to the left and right of it." src="https://raw.githubusercontent.com/HannesLeonha/Vexillum/refs/heads/master/docs/assets/images/hero.svg">
+<img alt="A badge displaying my working hours" src="https://hackatime-badge.hackclub.com/U092HP2LVNU/Vexillum"><br>
 This c library takes the arguments which the program received and parses them into a nicely accessible form.
 
 ## Demo
@@ -9,7 +9,7 @@ Here is a small demonstration of how the library works: <a href="https://hannesl
 If you are wondering where I got the name from. I remembered that the study of flags is called Vexillology. That name comes from the latin word for flag which is vexillum.
 
 ## Form
-The form with which the arguments will get converted is based on how shell scripts handle flags.
+The form with which the arguments will get converted is based on how shell scripts handle flags and will be explained in the following points:
 
 ### Loose arguments
 A loose argument is a piece of text that can be anywhere in the program arguments, but it can't start with a dash as that would make it a flag. They are seperated by spaces, but you can have arguments with spaces by using quotes (probably depends on how it is implemented in the terminal)
@@ -29,4 +29,4 @@ When setting the library up you can also specify that the flag has an argument a
 To use the library add the built library in your build system and include it with `#include "Vexillum.h"`.
 
 ### Functions
-This section will be added in the future as the library has not been implemented yet.
+In the future the functions will be documented in the header. For now please look at the implementation in `src/Vexillum.c` and at the examples in `test/*.c`.

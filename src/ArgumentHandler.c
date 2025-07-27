@@ -25,10 +25,14 @@ struct vexillum_error ah_add_argument(const char* argument) {
 }
 
 int ah_argument_length() {
+    if(argument_list == NULL) return 0;
+
     return ll_list_length(argument_list);
 }
 
 char* ah_get_argument(const int index) {
+    if(argument_list == NULL) return 0;
+
     return ll_get_list_element(argument_list, index);
 }
 

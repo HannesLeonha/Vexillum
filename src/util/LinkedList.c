@@ -7,7 +7,7 @@ struct linked_list* ll_create_list_element(const void* element) {
     struct linked_list* list = malloc(sizeof(struct linked_list));
 
     if(list != NULL) {
-        list->element = element;
+        list->element = (void*) element;
         list->next = NULL;
     }
 

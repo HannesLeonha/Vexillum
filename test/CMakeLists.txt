@@ -1,6 +1,7 @@
 set(TEST_FILES
-    main.c
+    Main.c
     ErrorString.c
+    Arguments.c
 )
 
 foreach(TEST_FILE ${TEST_FILES})
