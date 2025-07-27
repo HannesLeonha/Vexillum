@@ -26,7 +26,7 @@ When setting the library up you can also specify that the flag has an argument a
  - `program.exe -f path/to/file --username Toast -p 7&NjT%8&`
 
 ## Usage
-To use the library add the built library in your build system and include it with `#include "Vexillum.h"`.
+To use the library add the built library in your build system and include it with `#include "Vexillum.h"`. Make sure to also copy the file `${BINARY_DIRECTORY}/src/error/ErrorDefinitions.h` into the header include directory (this problem will be fixed in the future).
 
 ### Functions
 In the future the functions will be documented in the header. For now please look at the implementation in `src/Vexillum.c` and at the examples in `test/*.c`.
