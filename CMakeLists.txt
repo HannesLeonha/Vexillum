@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.31)
-project(Vexillum VERSION 0.1 LANGUAGES C)
+project(Vexillum VERSION 1.0 LANGUAGES C)
 
 enable_testing()
 
